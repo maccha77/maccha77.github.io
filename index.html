@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>点のアニメーション</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+  <script src="js/animation.js"></script>
+</head>
+<body>
+  <header>
+    <div class="wrapper">
+      <img id="fadein" src="media/title.png" alt="タイトル">
+    </div>
+    <div id="animation-canvas"></div>
+  </header>
+
+  <footer>
+    <div class="buttons-container">
+      <button onclick="movePoint(-300, 'red', 0.05)">筋トレする</button>
+      <button onclick="movePoint(500, 'blue', 0.02)">スマホさわる</button>
+      <button onclick="movePoint(-100, 'yellow', 0.03)">勉強する</button>
+      <button onclick="movePoint(400, 'green', 0.04)">だらだらする</button>
+    </div>
+  </footer>
+</body>
+</html>
