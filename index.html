@@ -4,26 +4,52 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>点のアニメーション</title>
+  <title>感情の波</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
   <script src="animation.js"></script>
+  <script src="intro.js"></script>
 </head>
 <body>
-  <header>
-    <div class="wrapper">
-      <img id="fadein" src="title.png" alt="タイトル">
+  <div id="intro-screen-1">
+    <div class="intro-content">
+      <h1>感情の波を乗りこなせていますか？</h1>
+      <p>クリックまたはタップして次へ進む</p>
     </div>
-    <div id="animation-canvas"></div>
-  </header>
+  </div>
 
-  <footer>
-    <div class="buttons-container">
-      <button onclick="movePoint(-300, 'red', 0.05)">筋トレする</button>
-      <button onclick="movePoint(500, 'blue', 0.02)">スマホさわる</button>
-      <button onclick="movePoint(-100, 'yellow', 0.03)">勉強する</button>
-      <button onclick="movePoint(400, 'green', 0.04)">だらだらする</button>
+  <div id="intro-screen-2" style="display: none;">
+    <div class="intro-content">
+      <h1>感情の波について知ろう</h1>
+      <p>感情は常に変動しています。このページでは、感情の波を視覚化して、どのように感情が変化するのかを示します。クリックまたはタップして次へ進む</p>
     </div>
-  </footer>
+  </div>
+
+  <div id="animation-screen" style="display: none;">
+    <header>
+      <div id="animation-canvas"></div>
+      <div class="wrapper">
+        <img id="fadein" src="title.png" alt="タイトル">
+      </div>
+    </header>
+
+    <div class="buttons-container">
+      <button onclick="movePoint(-200, 'lightblue', 0.05, 0.03)" class="ellipse-button" style="background-color: #5bc0de;">運動</button>
+      <button onclick="movePoint(200, 'lightcoral', 0.02, 0.04)" class="ellipse-button" style="background-color: #f67280;">夜更かし</button>
+      <button onclick="movePoint(-100, 'lightgreen', 0.03, 0.05)" class="ellipse-button" style="background-color: #81c784;">勉強</button>
+      <button onclick="movePoint(100, 'mediumpurple', 0.04, 0.02)" class="ellipse-button" style="background-color: #b39ddb;">スマホいじる</button>
+    </div>
+
+    <div class="explanation-container">
+      <div class="explanation">
+        <div class="explanation-text">赤色: 波を乗りこなせている</div>
+        <div class="explanation-circle" style="background-color: #ff6666;"></div>
+      </div>
+      <div class="explanation">
+        <div class="explanation-text">青色: 波を乗りこなせていない</div>
+        <div class="explanation-circle" style="background-color: #6666ff;"></div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
